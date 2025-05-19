@@ -1,11 +1,73 @@
-// prisma/schema.prisma
-datasource db {
-  provider  = "postgresql"
-  url  	    = env("DATABASE_URL")
-  // uncomment next line if you use Prisma <5.10
-  // directUrl = env("DATABASE_URL_UNPOOLED")
+Генераторы
+Proxy
+Proto
+Reconcilation
+declare
+shift + alt + f
+browser
+Прокоментировать весь проект
+export Default
+что такое кортеж чем отличается от массива и объекта в каких ситуациях применять?
+BOM (Browser Object Model) что такое?
+constructor(props) {
+    super(props);
 }
+любая ли аснихронная функция возвращает промис?
+разница между API и URL
+Бандл
+Babel
+cors
+Методы массивов
+Методы объектов
+Циклы какие в каких моментах лучше использовать
+Оптимизация
+DevTolls
 
-DATABASE_URL="postgresql://neondb_owner:npg_UbWNht8OwnI5@ep-black-bar-a4zi7yiw-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require"
-# uncomment next line if you use Prisma <5.10
-# DATABASE_URL_UNPOOLED="postgresql://neondb_owner:npg_UbWNht8OwnI5@ep-black-bar-a4zi7yiw.us-east-1.aws.neon.tech/neondb?sslmode=require"
+перевести проект на региональный
+пофиксить два числа после точки
+
+-----------Когды мы пишем серверный код на next.js лоакльно на localhost:3000 на каком сервере выполняеться код? ведь мы работаем локально, кто предостовляет нам этот сервер?
+
+----------------------------------------------------------------------------------------
+const addTransaction = async (
+  formData: FormData
+): Promise<TransactionResult> => {...}
+
+async function addTransaction (formData: FormData): Promise<TransactionResult> {...}
+---------------------------------------------------------------------------------------------
+
+можно ли тут вместо interface использвыать type и в чем разница что где лучше использовать?
+Promise<TransactionResult> это generic? в каких случаях использовать generic
+get() это функция откуда берется?
+
+: Promise<TransactionResult> этот тип дейтвует и на if (!textValue || textValue === "" || !amountValue) {
+    return { вот этот взовращамеый объект?
+      error: "Text or amount is missing",
+    };
+  }
+
+  этот тип const text: string = textValue.toString(); можем ли мы указать тип для textValue сразу при объявлении константы const textValue = formData.get("text");
+  типа так const textValue: string = formData.get("text"); и почему мы сразу так не сделали?
+
+  вот тут почему мы сначала преоброзуем в строку а потом преобразуем в число нельзя ли было сразу преобразовать в число?
+  const amount: number = parseFloat(amountValue.toString());
+
+  вот тут можно ли создавать объект вот так: const transactionData: TransactionData = {
+    text,
+    amount,
+  }; ведь у объекта должно быть ключ и значение а это похоже на массив
+
+return { data: transactionData }; 
+тут нам функция возвращает объект типа TransactionResult с заполненным полем data, содержащим созданный объект transactionData
+тут получается нам возвращается объект внутри другого объекта
+
+Почему это функция выполняется на сервере можем ли мы выполнить эту функцию на клиенте в дальнейшем записать в базу данных
+как можно определить какую функцию нужно выполнять на сервере какую на клиенте?
+
+в чем разница между export default addTransaction и export const addTransaction = () => {} и как понять что в каких ситуациях использвыать?
+
+--------------------------------------------------------------------------------
+После создание ui для отображение транзакции надо попробовать отправить запрос без revalidatePath("/");
+Привести весь проект к единому стилю exports
+
+
